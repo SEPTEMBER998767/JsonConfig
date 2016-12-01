@@ -1,0 +1,46 @@
+﻿{
+  "version": "1.0.0-*",
+  "title": "JsonConfig.Net",
+  "description": "JsonConfig.Net is ported from JsonConfig by Timo Dörr. This JsonConfig works for both .Net and .Net Core Frameworks. JsonConfig.Net is a simple to use configuration library, allowing JSON based config files for your C#/.NET application instead of cumbersome web.config/application.config xml files. It is based on Newtonsoft.JSON.Net and C# 4.0 dynamic feature. Allows putting your programs config file into .json files, where a default config can be embedded as a resource or put in the (web-)application folder. Configuration can be accessed via dynamic types, no custom classes or any other stub code is necessary. It supports for config inheritance, meaning a set of configuration files can be used to have a single, scoped configuration at runtime which is a merged version of all provided configuration files.",
+  "language": "en-US",
+  "authors": [ "Satish Kumar B" ],
+  "copyright": "Copyright (c) 2012-2016 Timo Dörr, Satish Kumar B 2016",
+  "packOptions": {
+    "projectUrl": "https://github.com/satish049/JsonConfig",
+    "tags": [ "Json", "Json Config", "Json Config Core" ],
+    "licenseUrl": "https://github.com/satish049/JsonConfig/blob/master/LICENSE.txt",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/satish049/JsonConfig"
+    },
+    "owners": [ "Timo Dörr", "Satish Kumar B" ],
+    "summary": "simple configuration library using JSON and C# 4.0 dynamic feature for .Net and .Net Core"
+  },
+  "frameworks": {
+    "net462": {
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1",
+        "System.Reflection": "4.0.10.0",
+        "System.Runtime": "4.0.20.0",
+        "System.Runtime.Loader": "4.0.0"
+      }
+    },
+    "netstandard1.6": {
+      "imports": [ "dnxcore50", "net45" ],
+      "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "Newtonsoft.Json": "9.0.1",
+        "System.Collections.NonGeneric": "4.0.1",
+        "System.Dynamic.Runtime": "4.0.11",
+        "System.IO.FileSystem.Watcher": "4.0.0",
+        "System.Runtime.Loader": "4.0.0",
+        "System.Threading.Thread": "4.0.0"
+      }
+    }
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
+  }
+}
